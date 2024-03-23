@@ -6,7 +6,7 @@
 /*   By: nlaerema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 19:44:44 by nlaerema          #+#    #+#             */
-/*   Updated: 2024/03/22 19:45:54 by nlaerema         ###   ########.fr       */
+/*   Updated: 2024/03/23 11:51:37 by nlaerema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ int main()
 
 	Array<int> arrCpy(arr);
 	arrCpy[0] = 42;
+
+	try
+	{
+		arr[21] = 21;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	std::cout << "arr[0] = " << arr[0] << std::endl;
 	std::cout << "arrCpy[0] = " << arrCpy[0] << std::endl;

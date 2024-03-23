@@ -6,7 +6,7 @@
 /*   By: nlaerema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:49:58 by nlaerema          #+#    #+#             */
-/*   Updated: 2024/03/22 19:43:16 by nlaerema         ###   ########.fr       */
+/*   Updated: 2024/03/23 11:46:53 by nlaerema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ class Array
 	public:
 				Array(void);
 				Array(unsigned int n);
-				Array(const Array &other);
+				Array(Array const &other);
 				~Array(void);
 		int		size(void) const;
 		Array	&operator=(Array const &other);
 		T		&operator[](unsigned int index);
+		T const	&operator[](unsigned int index) const;
 };

@@ -6,7 +6,7 @@
 /*   By: nlaerema <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:49:58 by nlaerema          #+#    #+#             */
-/*   Updated: 2024/03/22 19:44:25 by nlaerema         ###   ########.fr       */
+/*   Updated: 2024/03/23 11:47:48 by nlaerema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Array<T>::Array(unsigned int n):	data(new T[n]),
 }
 
 template <typename T>
-Array<T>::Array(const Array &other):	data(new T[other.len]),
+Array<T>::Array(Array const &other):	data(new T[other.len]),
 										len(other.len)
 {
 	unsigned int	i;
@@ -60,6 +60,14 @@ Array<T>	&Array<T>::operator=(Array const &other)
 
 template <typename T>
 T			&Array<T>::operator[](unsigned int index)
+{
+	if (this->len <= index)
+		throw (std::out_of_range(OUT_OF_RANGE));
+	return (this->data[index]);
+}
+
+template <typename T>
+T const		&Array<T>::operator[](unsigned int index) const
 {
 	if (this->len <= index)
 		throw (std::out_of_range(OUT_OF_RANGE));
